@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto Mono', helvetica, sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1em;
+    background: rgb(50, 50, 50);
+    color: white;
+}
+
+.section {
+    width: 100%;
+}
+
+
+#myCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Welcome */
+.welcome {
+    padding: 350px 0;
+}
+
+.welcome .body {
+    display: inline-block;
+    width: 30%;
+    animation: blinkingText 1s, fadeGlow 3s;
+}
+
+@keyframes blinkingText{
+    0% { opacity: 1; text-shadow: 0 0 10px #fff;      }
+    9%{ opacity: 0.01; text-shadow: none; }
+    10%{ opacity: 1; text-shadow: 0 0 10px #fff;       }
+    20%{ opacity: 1; text-shadow: 0 0 10px #fff;}
+    21%{ opacity: 0.01; text-shadow: none; }
+    29%{ opacity: 0.01; text-shadow: none; }
+    30%{ opacity: 1; text-shadow: 0 0 10px #fff;       }
+    35%{ opacity: 0.01; text-shadow: none; }
+    89%{ opacity: 0.01; text-shadow: none; }
+    90%{ opacity: 1; text-shadow: 0 0 10px #fff;}
+}
+
+@keyframes fadeGlow {
+    0%{ text-shadow: 0 0 10px #fff;}
+    50%{ text-shadow: 0 0 10px #fff;}
+    100%{ text-shadow: none;}
+}
+
+/*
+@keyframes blinkingText{
+    0% { color: #FFF; text-shadow: 0 0 10px #fff;      }
+    5%{ color: transparent; text-shadow: none; }
+    10%{ color: #FFF; text-shadow: 0 0 10px #fff;       }
+    15%{ color: transparent; text-shadow: none; }
+    20%{ color: #FFF; text-shadow: 0 0 10px #fff;}
+    75%{ color: transparent; text-shadow: none; }
+    90%{ color: #FFF; text-shadow: 0 0 10px #fff;}
+}
+*/
+/* My Work */
+.work {  
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    padding: 150px;
+    padding-top: 300px;
+    padding-bottom: 200px;
+    box-sizing: border-box;
+}
+
+.work > div {
+    flex: 1;
+}
+
+.code-symbol {
+    position: absolute;
+    color: rgb(200, 200, 200);
+    font-size: 10px;
+}
+
+.code-symbol.in-view {
+    text-shadow: 0 0 10px #fff;
+    animation: blinkingText 1s;
+}
+
+.code-1 {
+    top: 35%;
+    left: 15%;
+    transform: rotate(10deg);
+}
+.code-2 {
+    top: 70%;
+    left: 40%;
+    transform: rotate(-20deg);
+}
+
+
+/*
+.work .description {
+    display: inline-block;
+    text-align: left;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+.work .description.in-view {
+    animation: blinkingText 1s, fadeGlow 3s;
+}
+*/
+.work .description {
+    text-align: left;
+    padding-right: 5%;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.work .work-grid-holder {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.work .work-grid {
+    display: inline-flex;
+    flex-wrap: wrap;
+    border-radius: 50px;
+    padding: 50px;
+    width: 70%;
+}
+
+.work .work-grid .column {
+    flex: 31%;
+    max-width: 31%;
+    padding: 0 1%;
+}
+
+.cell {
+    width: 100%;
+}
+
+.cell img {
+    width: 100%;
+}
+
+.cell.in-view img {
+    transform: translateY(-2200px);
+    animation: slideDown 1s;
+    animation-fill-mode: forwards;
+}
+
+.cell.in-view.delay-1 img {
+    animation: slideDown 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+.cell.in-view.delay-2 img {
+    animation: slideDown 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+/* .work-grid.in-view {
+    animation: crashInRight 0.7s;
+} */
+
+
+.phone-divider {
+    display: none;
+}
+
+@keyframes crashInRight {
+    0% {
+        transform: translateX(1000px);
+    }
+    
+    30% {
+        transform: translateX(0px);
+    }
+    
+    40% {
+        transform: translateX(30px) rotate(-4deg);
+    }
+    
+    50% {
+        transform: translateX(-5px) rotate(1deg);
+    }
+    
+    60% {
+        transform: translateX(-10px) rotate(-3deg);
+    }
+}
+
+@keyframes crashInLeft {
+    0% {
+        transform: translateX(-1000px);
+    }
+    
+    30% {
+        transform: translateX(0px);
+    }
+    
+    40% {
+        transform: translateX(-30px) rotate(4deg);
+    }
+    
+    50% {
+        transform: translateX(5px) rotate(-1deg);
+    }
+    
+    60% {
+        transform: translateX(10px) rotate(3deg);
+    }
+}
+
+/* I make games */
+.gif-holder {
+    position: relative;
+    padding: 4em 10em;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.showcase img, .showcase img, .showcase video, .showcase video {
+    filter: grayscale(100%) brightness(40%);
+    width: 50%;
+    float: left;
+    margin: 0;
+}
+
+.showcase img, .showcase img, .showcase video, .showcase video {
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.showcase img:hover, .showcase img:hover, .showcase video:hover, .showcase video:hover {
+    filter: grayscale(0%) brightness(80%);
+}
+
+@media (max-width: 900px) {
+    .welcome .body {
+        width: 70%;
+    }
+    
+    .work {  
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        width: 100%;
+        padding: 3em;
+        box-sizing: border-box;
+    }   
+    
+    .work .description {
+        flex-basis: calc(100% - 12px);
+        padding-right: 0;
+        padding-bottom: 25%;
+    }
+    
+    .work .work-grid-holder {
+        flex-basis: calc(50% - 12px);
+    }
+    
+    .work .work-grid {
+        width: 100%;
+    }
+    
+    .phone-divider {
+        display: block;
+        margin: 25em 0;
+    }
+    
+    .gif-holder {
+        padding: 1em 2em;
+    }
+    
+    .showcase img, .showcase video {
+        width: 100%;
+    }
+    
+    .showcase img:nth-child(2), .showcase video:nth-child(2) {
+        display: none;
+    }
+}
+
+/*
+.games .title, .art .title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+}
+*/
+
+.slideHolder {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    visibility: hidden;
+}
+
+.slideHolder.in-view {
+    visibility: visible;
+}
+
+.slideHolder.in-view .title {
+    animation: slideDown 1s;
+}
+
+.slideHolder.in-view.below .title {
+    animation: slideUp 1s;
+}
+
+@keyframes slideDown {
+    0%{ transform: translateY(-2000px); }
+    100%{ transform: translateY(0px); }
+}
+
+@keyframes slideUp {
+    0%{ transform: translateY(2000px); }
+    100%{ transform: translateY(0px); }
+}
+
+/* @keyframes slideDown {
+    0%{ transform: translate(-50%, -2000px); }
+    100%{ transform: translateY(-50%,0px); }
+}
+
+@keyframes slideUp {
+    0%{ transform: translate(-50%, 2000px); }
+    100%{ transform: translateY(-50%,0px); }
+} */
+
+.left.in-view {
+    animation: crashInLeft 0.7s;
+}
+
+.right.in-view {
+    animation: crashInRight 0.7s;
+}
+
+/* I make art */
+
+/* I make more */
+.img-grid {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 25em;
+}
+
+.img-grid .column {
+    max-width: 50%;
+    height: 100%;
+}
+
+.img-grid .column img {
+   width: 100%;
+    height: 100%;
+}
+
+.contact {
+    text-align: center;
+    margin: 350px 0;
+}
+
+.contact-form {
+    display: inline-block;
+    width: 40%;
+}
+
+.contact-form input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 2%;
+    width: 49%;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.contact-form input.left {
+    float: left;
+}
+
+.contact-form input.right {
+    margin-left: 2%;
+}
+
+.contact-form #subject {
+    width: 100%;
+}
+
+.contact-form textarea {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: none;
+}
