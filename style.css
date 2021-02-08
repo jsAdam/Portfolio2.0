@@ -273,7 +273,7 @@ button:hover {
     filter: grayscale(0%) brightness(80%);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .welcome .body {
         width: 70%;
     }
@@ -298,7 +298,8 @@ button:hover {
     }
     
     .work .work-grid {
-        width: 100%;
+        width: 50%;
+        margin: auto;
     }
     
     .phone-divider {
@@ -320,6 +321,12 @@ button:hover {
     
     .showcase img:nth-child(2), .showcase video:nth-child(2) {
         display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .work .work-grid {
+        width: 100%;
     }
 }
 
