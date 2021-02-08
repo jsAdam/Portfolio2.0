@@ -24,28 +24,6 @@ function check_if_in_view() {
         }
         
         if($element.hasClass("js-fade-out")) {
-//            if((element_bottom_position >= window_top_position) &&
-//           (element_top_position <= window_bottom_position)) {
-//                let maxDist = window_height * 0.9;
-//                if(element_top_position >= window_top_position + window_height/2) {
-//                    let distFromBottom = Math.abs(element_top_position - window_bottom_position);
-//                    
-//                    if(distFromBottom > maxDist) {
-//                        $element.css("opacity", "1");
-//                    } else {
-//                        $element.css("opacity", map(distFromBottom, 50, maxDist, 0, 1));
-//                    }
-//                } else {
-//                    let distFromTop = Math.abs(element_bottom_position - window_top_position);
-//                    
-//                    if(distFromTop > maxDist) {
-//                        $element.css("opacity", "1");
-//                    } else {
-//                        $element.css("opacity", map(distFromTop, 50, maxDist, 0, 1));
-//                    }
-//                }
-//            }
-            
             let maxDist = window_height/5;
             let distFromCenter = Math.abs((element_top_position + element_height/2) - (window_top_position + window_height/2));
                     
@@ -62,9 +40,6 @@ function check_if_in_view() {
             
             $element.addClass("in-view");
             
-//            console.log(element_top_position);
-//            console.log(window_top_position + window_height/2);
-//          
             if(!elementAlreadyInView) {
                 if(element_top_position >= window_top_position + window_height/2) {
                     $element.addClass("above");

@@ -24,19 +24,11 @@ function windowResized() {
 }
 
 function draw() {
-    background(50);
+    background(40);
     
     let mouse = createVector(mouseX, mouseY);
     let mouseOutOfCanvas = false;
     
-//    if(!(mouse.x > 0 && mouse.x < width && mouse.y > 0 && mouse.y < height)) {
-//        if(millis() > creaturesSeekPointChangeTime.start + creaturesSeekPointChangeTime.duration) {
-//            creaturesSeekPoint = createVector(random(0, width), random(0, height));
-//            creaturesSeekPointChangeTime.start = millis();
-//            creaturesSeekPointChangeTime.duration = random(1000, 2000);
-//        }
-//        mouseOutOfCanvas = true;
-//    }
     if(millis() > creaturesSeekPointChangeTime.start + creaturesSeekPointChangeTime.duration) {
             creaturesSeekPoint = createVector(random(0, width), random(0, height));
             creaturesSeekPointChangeTime.start = millis();

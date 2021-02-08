@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
+/* Global */
 html, body {
     height: 100%;
     margin: 0;
@@ -12,6 +13,21 @@ body {
     font-size: 1em;
     background: rgb(50, 50, 50);
     color: white;
+}
+
+button {
+    background: white;
+    color: black;
+    padding: 17px 22px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .section {
@@ -28,7 +44,10 @@ body {
 
 /* Welcome */
 .welcome {
-    padding: 350px 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .welcome .body {
@@ -74,8 +93,7 @@ body {
     align-items: center;
     width: 100%;
     padding: 150px;
-    padding-top: 300px;
-    padding-bottom: 200px;
+    padding-bottom: 250px;
     box-sizing: border-box;
 }
 
@@ -296,6 +314,10 @@ body {
         width: 100%;
     }
     
+    .showcase a:nth-child(2), .showcase a:nth-child(2) {
+        display: none;
+    }
+    
     .showcase img:nth-child(2), .showcase video:nth-child(2) {
         display: none;
     }
@@ -382,21 +404,25 @@ body {
 
 .contact {
     text-align: center;
-    margin: 350px 0;
+    padding: 350px 0;
+}
+
+.contact h1 {
+    margin-bottom: 50px;
 }
 
 .contact-form {
     display: inline-block;
-    width: 40%;
+    width: 45%;
 }
 
 .contact-form input {
-    padding: 12px 15px;
+    padding: 20px 25px;
     border: none;
     border-radius: 5px;
-    margin-bottom: 2%;
-    width: 49%;
-    font-size: 16px;
+    margin-bottom: 3%;
+    width: 48.5%;
+    font-size: 18px;
     box-sizing: border-box;
 }
 
@@ -405,7 +431,7 @@ body {
 }
 
 .contact-form input.right {
-    margin-left: 2%;
+    margin-left: 3%;
 }
 
 .contact-form #subject {
@@ -417,8 +443,16 @@ body {
     border-radius: 5px;
     width: 100%;
     min-height: 150px;
-    padding: 15px;
-    font-size: 16px;
+    padding: 25px;
+    font-size: 18px;
     box-sizing: border-box;
     margin: none;
+    margin-bottom: 3%;
+}
+
+@media (max-width: 900px) {
+    .contact-form {
+        display: inline-block;
+        width: 75%;
+    }
 }
