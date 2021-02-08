@@ -30,7 +30,7 @@ function check_if_in_view() {
             if(distFromCenter < maxDist) {
                 $element.css("opacity", "1");
             } else {
-                $element.css("opacity", map(distFromCenter, maxDist, window_height * 0.9, 1, 0));
+                $element.css("opacity", scale(distFromCenter, maxDist, window_height * 0.9, 1, 0));
             }
         }
 
