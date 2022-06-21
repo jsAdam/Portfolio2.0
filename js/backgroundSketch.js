@@ -10,7 +10,7 @@ function setup() {
         creatureCount = 50;
     }
 
-    creaturesHandler = new CreaturesHandler(150);
+    creaturesHandler = new CreaturesHandler(creatureCount);
 }
 
 function isMovileDevice () {
