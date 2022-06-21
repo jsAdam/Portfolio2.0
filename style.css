@@ -75,18 +75,6 @@ button:hover {
     100%{ text-shadow: none;}
 }
 
-/*
-@keyframes blinkingText{
-    0% { color: #FFF; text-shadow: 0 0 10px #fff;      }
-    5%{ color: transparent; text-shadow: none; }
-    10%{ color: #FFF; text-shadow: 0 0 10px #fff;       }
-    15%{ color: transparent; text-shadow: none; }
-    20%{ color: #FFF; text-shadow: 0 0 10px #fff;}
-    75%{ color: transparent; text-shadow: none; }
-    90%{ color: #FFF; text-shadow: 0 0 10px #fff;}
-}
-*/
-/* My Work */
 .work {  
     display: flex;
     flex-flow: row wrap;
@@ -183,7 +171,7 @@ button:hover {
 @media (max-width: 1000px) {
     .welcome__body {
         width: 70%;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     
     .work {  
@@ -213,7 +201,7 @@ button:hover {
     .phone-divider {
         display: block;
         margin: 25em 0;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     
     .gif-holder {
@@ -221,7 +209,7 @@ button:hover {
     }
 
     .title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     
     .showcase img, .showcase video {
@@ -248,7 +236,7 @@ button:hover {
 
     .contact__form input, .contact__form textarea, .contact__form button {
         padding: 40px !important;
-        font-size: 1.5rem !important;
+        font-size: 1.2rem;
     }
 }
 
