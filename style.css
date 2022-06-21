@@ -50,7 +50,7 @@ button:hover {
     justify-content: center;
 }
 
-.welcome .body {
+ .welcome__body {
     display: inline-block;
     width: 30%;
     animation: blinkingText 1s, fadeGlow 3s;
@@ -101,54 +101,19 @@ button:hover {
     flex: 1;
 }
 
-.code-symbol {
-    position: absolute;
-    color: rgb(200, 200, 200);
-    font-size: 10px;
-}
-
-.code-symbol.in-view {
-    text-shadow: 0 0 10px #fff;
-    animation: blinkingText 1s;
-}
-
-.code-1 {
-    top: 35%;
-    left: 15%;
-    transform: rotate(10deg);
-}
-.code-2 {
-    top: 70%;
-    left: 40%;
-    transform: rotate(-20deg);
-}
-
-
-/*
-.work .description {
-    display: inline-block;
-    text-align: left;
-    padding-right: 5%;
-    box-sizing: border-box;
-}
-
-.work .description.in-view {
-    animation: blinkingText 1s, fadeGlow 3s;
-}
-*/
-.work .description {
+.work__description {
     text-align: left;
     padding-right: 5%;
     font-size: 20px;
     box-sizing: border-box;
 }
 
-.work .work-grid-holder {
+.work__grid-holder {
     display: inline-flex;
     flex-wrap: wrap;
 }
 
-.work .work-grid {
+.work__grid {
     display: inline-flex;
     flex-wrap: wrap;
     border-radius: 50px;
@@ -156,97 +121,39 @@ button:hover {
     width: 70%;
 }
 
-.work .work-grid .column {
+.work__grid__column {
     flex: 31%;
     max-width: 31%;
     padding: 0 1%;
 }
 
-.cell {
+.work__grid__cell {
     width: 100%;
 }
 
-.cell img {
+.work__grid__cell img {
     width: 100%;
 }
 
-.cell.in-view img {
+.slide-animation-cell.in-view img {
     transform: translateY(-2200px);
     animation: slideDown 1s;
     animation-fill-mode: forwards;
 }
 
-.cell.in-view.delay-1 img {
+.slide-animation-cell.in-view.delay-1 img {
     animation: slideDown 1s;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
 }
-.cell.in-view.delay-2 img {
+.slide-animation-cell.in-view.delay-2 img {
     animation: slideDown 1s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
 }
-
-
-.delay-1 {
-    animation-delay: 0.5s;
-}
-
-.delay-2 {
-    animation-delay: 1s;
-}
-
-/* .work-grid.in-view {
-    animation: crashInRight 0.7s;
-} */
-
 
 .phone-divider {
     display: none;
-}
-
-@keyframes crashInRight {
-    0% {
-        transform: translateX(1000px);
-    }
-    
-    30% {
-        transform: translateX(0px);
-    }
-    
-    40% {
-        transform: translateX(30px) rotate(-4deg);
-    }
-    
-    50% {
-        transform: translateX(-5px) rotate(1deg);
-    }
-    
-    60% {
-        transform: translateX(-10px) rotate(-3deg);
-    }
-}
-
-@keyframes crashInLeft {
-    0% {
-        transform: translateX(-1000px);
-    }
-    
-    30% {
-        transform: translateX(0px);
-    }
-    
-    40% {
-        transform: translateX(-30px) rotate(4deg);
-    }
-    
-    50% {
-        transform: translateX(5px) rotate(-1deg);
-    }
-    
-    60% {
-        transform: translateX(10px) rotate(3deg);
-    }
 }
 
 /* I make games */
@@ -273,9 +180,10 @@ button:hover {
     filter: grayscale(0%) brightness(80%);
 }
 
-@media (max-width: 1200px) {
-    .welcome .body {
+@media (max-width: 1000px) {
+    .welcome__body {
         width: 70%;
+        font-size: 1.5rem;
     }
     
     .work {  
@@ -287,17 +195,17 @@ button:hover {
         box-sizing: border-box;
     }   
     
-    .work .description {
+    .work .work__description {
         flex-basis: calc(100% - 12px);
         padding-right: 0;
         padding-bottom: 25%;
     }
     
-    .work .work-grid-holder {
+    .work .work__grid-holder {
         flex-basis: calc(50% - 12px);
     }
     
-    .work .work-grid {
+    .work__grid {
         width: 50%;
         margin: auto;
     }
@@ -305,14 +213,24 @@ button:hover {
     .phone-divider {
         display: block;
         margin: 25em 0;
+        font-size: 1.5rem;
     }
     
     .gif-holder {
         padding: 1em 2em;
     }
+
+    .title {
+        font-size: 1.5rem;
+    }
     
     .showcase img, .showcase video {
         width: 100%;
+    }
+
+    .showcase {
+        padding-bottom: 100px;
+        padding-top: 100px;
     }
     
     .showcase a:nth-child(2), .showcase a:nth-child(2) {
@@ -322,25 +240,25 @@ button:hover {
     .showcase img:nth-child(2), .showcase video:nth-child(2) {
         display: none;
     }
+    
+    .contact__form {
+        display: inline-block !important;
+        width: 85% !important;
+    }
+
+    .contact__form input, .contact__form textarea, .contact__form button {
+        padding: 40px !important;
+        font-size: 1.5rem !important;
+    }
 }
 
 @media (max-width: 900px) {
-    .work .work-grid {
+    .work .work__grid {
         width: 100%;
     }
 }
 
-/*
-.games .title, .art .title {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 100;
-}
-*/
-
-.slideHolder {
+.slide-animation {
     position:absolute;
     top: 50%;
     left: 50%;
@@ -349,15 +267,15 @@ button:hover {
     visibility: hidden;
 }
 
-.slideHolder.in-view {
+.slide-animation.in-view {
     visibility: visible;
 }
 
-.slideHolder.in-view .title {
+.slide-animation.in-view.above .title {
     animation: slideDown 1s;
 }
 
-.slideHolder.in-view.below .title {
+.slide-animation.in-view.below .title {
     animation: slideUp 1s;
 }
 
@@ -371,44 +289,7 @@ button:hover {
     100%{ transform: translateY(0px); }
 }
 
-/* @keyframes slideDown {
-    0%{ transform: translate(-50%, -2000px); }
-    100%{ transform: translateY(-50%,0px); }
-}
-
-@keyframes slideUp {
-    0%{ transform: translate(-50%, 2000px); }
-    100%{ transform: translateY(-50%,0px); }
-} */
-
-.left.in-view {
-    animation: crashInLeft 0.7s;
-}
-
-.right.in-view {
-    animation: crashInRight 0.7s;
-}
-
-/* I make art */
-
-/* I make more */
-.img-grid {
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 25em;
-}
-
-.img-grid .column {
-    max-width: 50%;
-    height: 100%;
-}
-
-.img-grid .column img {
-   width: 100%;
-    height: 100%;
-}
-
+/* Contact */
 .contact {
     text-align: center;
     padding: 350px 0;
@@ -418,12 +299,12 @@ button:hover {
     margin-bottom: 50px;
 }
 
-.contact-form {
+.contact__form {
     display: inline-block;
     width: 45%;
 }
 
-.contact-form input {
+.contact__form input {
     padding: 20px 25px;
     border: none;
     border-radius: 5px;
@@ -433,19 +314,19 @@ button:hover {
     box-sizing: border-box;
 }
 
-.contact-form input.left {
+.contact__form input.left {
     float: left;
 }
 
-.contact-form input.right {
+.contact__form input.right {
     margin-left: 3%;
 }
 
-.contact-form #subject {
+.contact__form #subject {
     width: 100%;
 }
 
-.contact-form textarea {
+.contact__form textarea {
     border: none;
     border-radius: 5px;
     width: 100%;
@@ -455,11 +336,4 @@ button:hover {
     box-sizing: border-box;
     margin: none;
     margin-bottom: 3%;
-}
-
-@media (max-width: 900px) {
-    .contact-form {
-        display: inline-block;
-        width: 75%;
-    }
 }
